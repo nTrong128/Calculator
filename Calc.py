@@ -27,12 +27,11 @@ class Calculator:
             7: (1, 1), 8: (1, 2), 9: (1, 3),
             4: (2, 1), 5: (2, 2), 6: (2, 3),
             1: (3, 1), 2: (3, 2), 3: (3, 3),
-            0: (4, 2), '.': (4, 1)
+            0: (4, 2)
         }
         self.operations = {"/": "\u00F7", "*": "\u00D7", "-": "-", "+": "+"}
         self.total_label, self.label = self.create_display_labels()
         self.buttons_frame = self.create_buttons_frame()
-
 
         self.buttons_frame.rowconfigure(0, weight=1)
         for x in range(1, 5):
@@ -56,6 +55,7 @@ class Calculator:
         self.create_equals_button()
         self.create_square_button()
         self.create_sqrt_button()
+        self.create_decimal_button()
 
     def create_display_labels(self):
         total_label = tk.Label(self.display_frame, text=self.total_expression, anchor=tk.E, bg=LIGHT_GRAY,
@@ -79,7 +79,7 @@ class Calculator:
         for digit, grid_value in self.digits.items():
             button = tk.Button(self.buttons_frame, text=str(digit), bg=WHITE, fg=LABEL_COLOR,
                                font=DIGITS_FONT_STYLE, borderwidth=0,
-                               command=lambda x=digit:self.add_to_expression(x))
+                               command=lambda x=digit: self.add_to_expression(x))
             button.grid(row=grid_value[0], column=grid_value[1], sticky=tk.NSEW)
 
     def append_operator(self, operator):
@@ -94,14 +94,37 @@ class Calculator:
         for operator,symbol in self.operations.items():
             button = tk.Button(self.buttons_frame, text=symbol,
                                bg=OFF_WHITE, fg=LABEL_COLOR, font=DEFAULT_FONT_STYLE, borderwidth=0,
-                               command= lambda  x=operator: self.append_operator(x))
+                               command=lambda x=operator: self.append_operator(x))
             button.grid(row=i, column=4, sticky=tk.NSEW)
-            i+=1
+            i += 1
 
     def create_buttons_frame(self):
         frame = tk.Frame(self.window)
         frame.pack(expand=True, fill='both')
         return frame
+
+    def decimal(self):
+        value = self.current_expression
+        for operator, symbol in self.operations.items():
+            if operator not in value:
+                if '.' in value:
+                    pass
+                else:
+                    self.current_expression = str(f"{self.current_expression}.")
+                    self.update_label()
+                    break
+            else:
+                if value[-1].isnumeric() and '.' not in value[value.rfind(operator):]:
+                    self.current_expression = str(f"{self.current_expression}.")
+                    self.update_label()
+                    break
+                else:
+                    pass
+
+    def create_decimal_button(self):
+        button = tk.Button(self.buttons_frame, text=".", bg=WHITE, fg=LABEL_COLOR,
+                           font=DIGITS_FONT_STYLE, borderwidth=0, command=self.decimal)
+        button.grid(row=4, column=1, sticky=tk.NSEW)
 
     def clear(self):
         self.current_expression = ""
@@ -162,6 +185,7 @@ class Calculator:
     def update_label(self):
 
         self.label.config(text=self.current_expression[:11])
+
     def run(self):
         self.window.mainloop()
 

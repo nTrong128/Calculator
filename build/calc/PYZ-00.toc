@@ -1,4 +1,4 @@
-('D:\\py\\Calculator2.0\\build\\Calc\\PYZ-00.pyz',
+('D:\\Github\\Calculator\\build\\Calc\\PYZ-00.pyz',
  [('os', 'D:\\Python\\lib\\os.py', 'PYMODULE'),
   ('subprocess', 'D:\\Python\\lib\\subprocess.py', 'PYMODULE'),
   ('selectors', 'D:\\Python\\lib\\selectors.py', 'PYMODULE'),
@@ -122,7 +122,7 @@
   ('posixpath', 'D:\\Python\\lib\\posixpath.py', 'PYMODULE'),
   ('stat', 'D:\\Python\\lib\\stat.py', 'PYMODULE'),
   ('_py_abc', 'D:\\Python\\lib\\_py_abc.py', 'PYMODULE'),
-  ('stringprep', 'D:\\Python\\lib\\stringprep.py', 'PYMODULE'),
   ('tracemalloc', 'D:\\Python\\lib\\tracemalloc.py', 'PYMODULE'),
+  ('stringprep', 'D:\\Python\\lib\\stringprep.py', 'PYMODULE'),
   ('tkinter', 'D:\\Python\\lib\\tkinter\\__init__.py', 'PYMODULE'),
   ('tkinter.constants', 'D:\\Python\\lib\\tkinter\\constants.py', 'PYMODULE')])

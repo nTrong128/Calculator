@@ -160,6 +160,10 @@ class Calculator:
         button.grid(row=0, column=3, sticky=tk.NSEW)
 
     def evaluate(self):
+        expression = self.current_expression
+        while expression[0] == '0':
+            expression = expression[1:]
+            self.current_expression = expression
         self.total_expression += self.current_expression
         self.update_total_label()
         try:

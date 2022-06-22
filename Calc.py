@@ -16,7 +16,8 @@ class Calculator:
     def __init__(self):
         self.window = tk.Tk()
         self.window.geometry("375x677")
-        self.window.resizable(0, 0)
+        self.window.resizable(height=None, width=None)
+        self.window.minsize(220, 320)
         self.window.title("Calculator")
         self.window.iconbitmap(r'D:\icon.ico')
 
@@ -91,7 +92,7 @@ class Calculator:
 
     def create_operator_buttons(self):
         i = 0
-        for operator,symbol in self.operations.items():
+        for operator, symbol in self.operations.items():
             button = tk.Button(self.buttons_frame, text=symbol,
                                bg=OFF_WHITE, fg=LABEL_COLOR, font=DEFAULT_FONT_STYLE, borderwidth=0,
                                command=lambda x=operator: self.append_operator(x))
@@ -173,12 +174,12 @@ class Calculator:
     def create_equals_button(self):
         button = tk.Button(self.buttons_frame, text="=",
                            bg=LIGHT_BLUE, fg=LABEL_COLOR, font=DEFAULT_FONT_STYLE, borderwidth=0,
-                           command= self.evaluate)
+                           command=self.evaluate)
         button.grid(row=4, column=3, columnspan=2, sticky=tk.NSEW)
 
     def update_total_label(self):
         expression = self.total_expression
-        for operator,symbol in self.operations.items():
+        for operator, symbol in self.operations.items():
             expression = expression.replace(operator, f'{symbol}')
         self.total_label.config(text=expression)
 

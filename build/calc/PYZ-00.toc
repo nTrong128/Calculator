@@ -121,8 +121,8 @@
   ('genericpath', 'D:\\Python\\lib\\genericpath.py', 'PYMODULE'),
   ('posixpath', 'D:\\Python\\lib\\posixpath.py', 'PYMODULE'),
   ('stat', 'D:\\Python\\lib\\stat.py', 'PYMODULE'),
-  ('_py_abc', 'D:\\Python\\lib\\_py_abc.py', 'PYMODULE'),
-  ('tracemalloc', 'D:\\Python\\lib\\tracemalloc.py', 'PYMODULE'),
   ('stringprep', 'D:\\Python\\lib\\stringprep.py', 'PYMODULE'),
+  ('tracemalloc', 'D:\\Python\\lib\\tracemalloc.py', 'PYMODULE'),
+  ('_py_abc', 'D:\\Python\\lib\\_py_abc.py', 'PYMODULE'),
   ('tkinter', 'D:\\Python\\lib\\tkinter\\__init__.py', 'PYMODULE'),
   ('tkinter.constants', 'D:\\Python\\lib\\tkinter\\constants.py', 'PYMODULE')])

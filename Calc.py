@@ -19,7 +19,6 @@ class Calculator:
         self.window.resizable(height=None, width=None)
         self.window.minsize(220, 320)
         self.window.title("Calculator")
-
         self.total_expression = ""
         self.current_expression = ""
         self.display_frame = self.create_display_frame()

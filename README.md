@@ -3,4 +3,4 @@ Just a Really simple Calculator of first year Computer Science student.😎😎
 # Feature
 - Really gud looking.
 - Can be entered by keyboard, calculated and cleared values (v2.0 or higher).
-- Got an app icon.
+- Got an app icon( No more)

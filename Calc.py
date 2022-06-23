@@ -19,7 +19,6 @@ class Calculator:
         self.window.resizable(height=None, width=None)
         self.window.minsize(220, 320)
         self.window.title("Calculator")
-        self.window.iconbitmap(r'D:\icon.ico')
 
         self.total_expression = ""
         self.current_expression = ""
